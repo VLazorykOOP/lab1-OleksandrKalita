@@ -53,11 +53,32 @@ void ShowMainMenu()
 }
 
 void TaskFirst(){
+    int arrSize;
+    cout << "Input array size: ";
+    cin >> arrSize;
 
+    int arrayA[arrSize];
+    int arrayB[arrSize];
+    int arrayC[arrSize];
+
+    for (int index = 0; index < arrSize; index++){
+        arrayA[index] = 1 + rand() % 100;
+    }
+    for (int index = 0; index < arrSize; index++){
+        arrayB[index] = 1 + rand() % 100;
+    }
+    
+    for (int index = 0; index < arrSize; index++){
+        arrayC[index] = arrayA[index] * arrayB[index];
+    }
+
+    for (int index = 0; index < arrSize; index++){
+        cout << arrayC[index] << "\t";
+    }
 }
 void TaskSecond(){
 
 }
 void TaskThree(){
-    
+
 }
