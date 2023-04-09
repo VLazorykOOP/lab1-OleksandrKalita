@@ -77,8 +77,72 @@ void TaskFirst(){
     }
 }
 void TaskSecond(){
+    cout << "Input array size: ";
+    int arrSize;
+    cin >> arrSize;
+    int arr[arrSize];
 
+    for (int index = 0; index < arrSize; index++){
+        arr[index] = 1 + rand() % 100;
+    }
+
+    int maxElement;
+
+    if(arr[0] % 2 == 0){
+        maxElement = arr[0];
+
+        for (int index = 0; index < arrSize; index++){
+            if(arr[index] % 2 == 0 && arr[index] > maxElement){
+                maxElement = arr[index];
+            }
+        }
+        cout << "Найбільший парний елемент = "<< maxElement << endl;
+    } else {
+        cout << "Перший елемент не є парним: " << arr[0] << endl;
+    }
 }
 void TaskThree(){
+    int arraySize = 1 + rand() % 200;
+    
+    int arrA[arraySize];
+
+    for(int index = 0; index < arraySize; index++){
+        arrA[index] = rand() % 100;
+    }
+
+    int coutOfNum = 0;
+    for(int index = 0; index < arraySize; index++){
+        arrA[index] = rand() % 100;
+        int D = 3 * arrA[index] - 4 * 5;
+        int x1 = (-(3 * arrA[index]) + sqrt(D))/2; 
+        int x2 = (-(3 * arrA[index]) + sqrt(D))/2; 
+
+        if(x1 > 0 && x2 > 0){
+            coutOfNum++;
+        }
+    }
+
+    cout << "countOfNum: " << coutOfNum << endl;
+
+    int arrB[coutOfNum];
+    int indexB = 0;
+    for (int index = 0; index < arraySize; index++){
+        arrA[index] = rand() % 100;
+        int D = 3 * arrA[index] - 4 * 5;
+        int x1 = (-(3 * arrA[index]) + sqrt(D))/2; 
+        int x2 = (-(3 * arrA[index]) + sqrt(D))/2; 
+
+        if(x1 > 0 && x2 > 0){
+            arrB[indexB] = arrA[index]; 
+            indexB++;
+        }
+    }
+
+    cout << "Array: ";
+    for (int index = 0; index < coutOfNum; index++){
+        cout << arrB[index]<< "  ";
+    }
+    
+    cout << "\n\n";
 
 }
